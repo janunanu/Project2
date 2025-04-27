@@ -1,0 +1,223 @@
+h1 {
+    font-size:52px;
+    font-weight: bold;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+
+}
+
+h2{
+    font-size: 36px;
+    font-weight: bold;
+    color: yellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 2px 2px lightgray;
+}
+
+body {
+    background-image:url(istockphoto-1007557230-1024x1024.jpg);
+    background-size: cover; /* Ensures the image covers the entire screen */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    height: 100vh; /* Full viewport height */
+    margin: 0; 
+    font-size:22px;
+    font-weight: bold;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+/* Container for all items that should float to the right*/
+.container {
+    display: grid;
+    grid-template-columns: 1fr auto; /* Left empty, right content auto-sized */
+    align-items: start; /* Aligns content towards the top */
+    height: 100vh; /* Keeps full-screen height */
+    padding-top: 5vh; /* Moves it down slightly */
+}
+#showtime {
+    max-height: 300px;       /* rajoittaa korkeuden */
+    overflow-y: auto;        /* pystysuuntainen vieritys */
+    margin-top: 15px;
+  }
+
+  #showtime table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #showtime th, #showtime td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  #showtime th {
+    background-color: #444;
+    color: yellow;
+  }
+  
+  #showtime tr:nth-child(even) {
+    background-color: #eee;
+  }
+  
+  #showtime tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  
+#list, #showtime {
+    justify-self: end; /* Moves them to the right */
+}
+#list, #showtime {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    background-color:whitesmoke;
+    color: black;
+    border-radius: 5px;
+    padding: 30px;
+    font-size: 1.5rem;
+    max-width: 750px;
+    height: 60vh;
+    box-shadow: 5px 5px 15px rgba(0,0,0,2);
+    
+}
+/* Dropdown Button */
+.dropbtn {
+    background-color: lightgray;
+    border-radius: 10px;
+    color: black;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  
+  /* Dropdown button on hover & focus */
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #fff;
+  }
+  
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+  .show {display:block;}
+
+  .send{
+    background-color: lightgray;
+    color: black;
+    padding: 5px;
+    border-radius: 5px;
+
+
+  }
+
+.popup{
+    position: fixed;
+    top: 100vh;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+}
+.popup.overlay{
+    position:absolute;
+    top:0px;
+    left:8px;
+    width: 100%;
+    height:100%;
+    background: rgba(0,0,0,5);
+    opacity:0;
+    transition: opacity 100px ease-in-out 200ms;
+
+}
+
+.popup .popup-content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.15);
+    width: calc(100% - 20px);
+    max-width: 800px;
+    background-color: dimgray;
+    padding: 25px;
+    border-radius: 20px;
+    opacity:0;
+    box-shadow: 0px 2px 2px 5px rgba(0,0,0,05);
+    transition: all 300ms ease-in-out; 
+}
+
+.popup .popup-content h2 {
+    margin: 10px 0px;
+    font-size: 25px;
+    color: yellow;
+    text-align: center;
+
+}
+
+.popup .popup-content p {
+    margin: 15px 6px;
+    color: white;
+    font-size: 14px;
+    text-align: center;
+}
+
+.popup .popup-content .controls {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px 0px;
+
+}
+
+.popup .popup-content .controls button{
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.popup .popup-content .controls .close{
+    background: transparent;
+    color: #111;
+}
+
+.popup.active {
+    top: 0px;
+    transition: top 0ms ease-in-out 0ms;
+}
+.popup.active.overlay{
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+.popup.active .popup-content {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+}
